@@ -1,57 +1,29 @@
 ﻿using UnityEngine;
 
-namespace ProjectName
+namespace Assets.GameAssets.Scripts.BezierCurves
 {
-	[RequireComponent(typeof(LineRenderer))]
-	public class Bezier : MonoBehaviour
+	public abstract class Bezier
 	{
-		#region Editor Fields
-		[SerializeField] private Transform _startPoint;
-		[SerializeField] private Transform _endPoint;
-		[SerializeField] private int _resolutionPoints = 50;
-		#endregion
+		protected Vector3[] positions;
+		protected int resolutionPoints = 30;
 
-		private Vector3[] _positions;
-		private LineRenderer _lineRenderer;
-		
+		public Vector3[] Positions => positions;
 
-		#region Unity Methods
-		private void Awake()
+		public Bezier(int resolutionPoints)
 		{
-			_lineRenderer = GetComponent<LineRenderer>();
-			_positions = new Vector3[_resolutionPoints];
+			this.resolutionPoints = resolutionPoints;
 		}
 
-		private void Start()
+		public int ResolutionPoints
 		{
-			_lineRenderer.positionCount = _resolutionPoints;
-
-			DrawLinearCurve();
-		}
-		#endregion
-
-		#region Public Methods
-
-		#endregion
-
-		#region Private Methods
-		private void DrawLinearCurve()
-		{
-			for (var i = 0; i < _resolutionPoints; ++i)
+			get => resolutionPoints;
+			set
 			{
-				var t = (i) / (float)(_resolutionPoints - 1);
-				_positions[i] = CalculateLinearBezierPoint(t, _startPoint.position, _endPoint.position);
+				resolutionPoints = value;
+				GenerateCurvePoints();
 			}
-
-			_lineRenderer.SetPositions(_positions);
 		}
 
-		private Vector3 CalculateLinearBezierPoint(double t, Vector3 startPoint, Vector3 endPoint)
-		{
-			// P = P0 + t(P1 - P0)
-			return startPoint + (float)t * (endPoint - startPoint);
-		}
-		#endregion
+		public abstract void GenerateCurvePoints();
 	}
 }
-
