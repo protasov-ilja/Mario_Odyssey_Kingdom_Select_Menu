@@ -1,5 +1,4 @@
-﻿using ProjectName;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.GameAssets.Scripts.BezierCurves
 {

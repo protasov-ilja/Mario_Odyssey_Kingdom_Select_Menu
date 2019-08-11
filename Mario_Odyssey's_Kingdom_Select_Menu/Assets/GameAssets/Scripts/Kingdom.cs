@@ -1,21 +1,20 @@
 ﻿using System;
 using UnityEngine;
 
-namespace ProjectName
+namespace Assets.GameAssets.Scripts
 {
 	[Serializable]
-	public sealed class Kingdom
+	public sealed class Kingdom : IKingdom
 	{
-		public string name;
+		[SerializeField] private string _name;
+		[SerializeField, Range(-180, 180)] private float _xPosition;
+		[SerializeField, Range(-89, 89)] private float _yPosition;
 
-		[Range(-180, 180)]
-		public float x;
+		public string Name => _name;
+		public float XPosition => _xPosition;
+		public float YPosition => _yPosition;
 
-		[Range(-89, 89)]
-		public float y;
-
-		[HideInInspector]
-		public Transform visualPoint;
+		public Transform VisualPoint { get; set; }
 	}
 }
 

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: de476d80d871d5d4eb623085a1d64627, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.29530597, g: 0.4030533, b: 0.5563494, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 91701428}
   - component: {fileID: 91701427}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BigCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 39c317dc044328b4cab3cd8c652d7c2c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -636,31 +636,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 923828314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c71f42f59c7ae724ba7ea247495768c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 65eb5f08730477843a095ec28dd88e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _kingdoms:
-  - name: W1
-    x: 18
-    y: 24
-    visualPoint: {fileID: 0}
-  - name: W2
-    x: 52
-    y: -28
-    visualPoint: {fileID: 0}
-  - name: W3
-    x: 115
-    y: 2
-    visualPoint: {fileID: 0}
-  - name: W4
-    x: 140
-    y: -43
-    visualPoint: {fileID: 0}
+  - _name: World1
+    _xPosition: -134
+    _yPosition: -24
+  - _name: World2
+    _xPosition: -79
+    _yPosition: 9
+  - _name: World3
+    _xPosition: -37
+    _yPosition: -29
+  - _name: World4
+    _xPosition: 18
+    _yPosition: -51
   _kingdomPointPrefab: {fileID: 466460339027688219, guid: 21405f7879601244ea9f3b80480dda73,
     type: 3}
   _kingdomButtonPrefab: {fileID: 3855869899821922048, guid: a5e8b6499bf9b324bb3f6fbd2c6e3dd8,
     type: 3}
-  _modeltransform: {fileID: 1603188360}
+  _modelTransform: {fileID: 1603188360}
   _kingdomButtonContainer: {fileID: 223279587}
   _lookDuration: 1
   _lookEase: 6
@@ -758,7 +754,7 @@ GameObject:
   - component: {fileID: 1049719686}
   - component: {fileID: 1049719685}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: MiniCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -818,7 +814,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 39c317dc044328b4cab3cd8c652d7c2c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5697,11 +5693,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EarthModel
-      objectReference: {fileID: 0}
-    - target: {fileID: 3776243255644088047, guid: 81894b7bb641da9439ce77a971f8e4bb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8279766797979152032, guid: 81894b7bb641da9439ce77a971f8e4bb,
         type: 3}
